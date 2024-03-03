@@ -35,7 +35,8 @@ function getGreeting(user) {
 
 # What is React
 ###
-React是用于构建用户界面的JavaScript库, 由Facebook研发。   
+React是用于构建用户界面的JavaScript库, 由Facebook研发。React本身不提供路由，数据获取等功能，所以它仅仅是个库，需要依赖其他工具库完成项目构建。
+如react-router提供路由功能，axios提供数据获取功能等等。   
 1. 声明式设计：React使创建交互式UI变得简单, **UI=F(D)**
 2. 组件化：构建管理自身 **状态(State)** 的封装组件，然后组合构成复杂界面   
 3. 高效：通过使用 **虚拟dom**，减少了与真实DOM的交互   
@@ -47,9 +48,9 @@ React是用于构建用户界面的JavaScript库, 由Facebook研发。
 ###
 可以使用不同的框架（脚手架）去创建React应用，也可以自行通过webpack构建React应用   
 
-Next.js
+Vite
 ```js
-npx create-next-app@latest
+npm create vite@latest xxx -- --template react-ts
 ```
 Remix
 ```js
@@ -63,32 +64,35 @@ npx create-react-app my-app
 ---
 
 # How to create components
-```js {1-4}
-class FirstComponent extends ReactComponent {
-  constructor(props){
-    super(props)
-  }
-
-  function render(){
-    return <div>Hello world</div>
-  }
-}
-```
+React提供了两种构建组件的方式
+1. Class component
+2. Function component(recommended)
 
 ---
 
 # Class components
+```js
+import { Component } from 'react';
+class Greeting extends Component {
+  render() {
+    return <h1>Hello, {this.props.name}!</h1>;
+  }
+}
+```
+```html
+<Greeting name="Taylor" />
+```
 
 ---
-
-# Function components
-
----
-
 # Life cycle
 
 ---
-# Write with typescript
+# Function components(recommended)
+
+---
+
+# React diff
+# React 
 # Compare to angular
 # Router
 # Taro, Electron

@@ -34,15 +34,31 @@ function getGreeting(user) {
 ---
 
 # What is React
-
+###
+React是用于构建用户界面的JavaScript库, 由Facebook研发。   
+1. 声明式设计：React使创建交互式UI变得简单, **UI=F(D)**
+2. 组件化：构建管理自身 **状态(State)** 的封装组件，然后组合构成复杂界面   
+3. 高效：通过使用 **虚拟dom**，减少了与真实DOM的交互   
+4. 灵活：因为React是个库，所以能够在不同的技术栈中使用   
 ---
 
+
 # How to install
+###
+可以使用不同的框架（脚手架）去创建React应用，也可以自行通过webpack构建React应用   
 
+Next.js
 ```js
-npm install react
+npx create-next-app@latest
 ```
-
+Remix
+```js
+npx create-remix
+```
+create-react-app (还能用，推荐初学者，但已经被官方抛弃)
+```js
+npx create-react-app my-app
+```
 
 ---
 
@@ -53,8 +69,8 @@ class FirstComponent extends ReactComponent {
     super(props)
   }
 
-  function abc(){
-    console.log('abc')
+  function render(){
+    return <div>Hello world</div>
   }
 }
 ```

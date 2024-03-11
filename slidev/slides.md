@@ -37,9 +37,12 @@ function getGreeting(user) {
 ###
 React是用于构建用户界面的JavaScript库, 由Facebook研发。React本身不提供路由，数据获取等功能，所以它仅仅是个库，需要依赖其他工具库完成项目构建。
 如react-router提供路由功能，axios提供数据获取功能等等。   
-1. 声明式设计：React使创建交互式UI变得简单, **UI=F(D)**
+1. 声明式设计：React使创建交互式UI变得简单, **UI=F(D)**   
+
 2. 组件化：构建管理自身 **状态(State)** 的封装组件，然后组合构成复杂界面   
+
 3. 高效：通过使用 **虚拟dom**，**diff算法**，**react fiber**，减少了与真实DOM的交互,优化了渲染过程    
+
 4. 灵活：因为React是个库，所以能够在不同的技术栈中使用,小程序，移动app，桌面应用程序都可以使用react开发   
 ---
 
@@ -52,15 +55,11 @@ Vite
 ```js
 npm create vite@latest xxx -- --template react-ts
 ```
-Remix
-```js
-npx create-remix
-```
+
 create-react-app (还能用，推荐初学者，但已经被官方抛弃)
 ```js
 npx create-react-app my-app
 ```
-
 ---
 
 # How to create components
@@ -127,12 +126,13 @@ function Greeting({name}){
 # React Hooks
 ###
 React Hooks能够使函数组件使用react的一些特性。v16.3版本后引入  
-Hooks都以use开头   
+Hooks都以use开头, useEffect,useMemo,useRef   
 useState能够在函数组件中模拟state以及setState
 ```js
 const [index, setIndex] = useState(0);
 ```
-定义了一个index的初始状态，setIndexuseState返回的用于更新index状态的函数，调用setIndex(newValue)来更新index状态。
+定义了一个index的初始状态，setIndexuseState返回的用于更新index状态的函数，调用setIndex(newValue)来更新index状态。   
+
 ---
 
 # React Render
@@ -177,8 +177,8 @@ const [index, setIndex] = useState(0);
 
 # React Diff
 ###
-渲染dom的开销很大，为了减少回流和重绘并只更新需要的一部分dom，diff算法帮助我们实现了这一点。
-本质：找出两个虚拟dom对象之间的差异，尽可能节点复用。   
+渲染dom的开销很大，为了减少回流和重绘并只更新需要的一部分dom，diff算法帮助我们实现了这一点。   
+本质：**找出两个虚拟dom对象之间的差异，尽可能节点复用**。   
 React diff 有三种策略：   
 1. Tree Diff
 2. Component Diff
@@ -200,28 +200,47 @@ React diff 有三种策略：
 # Element Diff
 ###
 Element Diff 分为三种操作   
-1.添加   
-2.删除   
-3.更新
+1.添加：新的节点不在旧集合中，对新节点进行插入操作   
+2.移动：节点存在于旧集合中且是可更新的类型，此时可复用之前的node节点，更新属性，执行移动操作。  
+3.删除：原节点不在新的集合中，或者在新的集合中不能直接复用或更新，对原节点执行删除操作。   
+
 ---
 
 # React Fiber
 ###
 React Fiber是react v16版本之后引入的架构。   
+
 js线程和渲染线程是互斥的，同一时间只能有一个线程执行，所以当js线程占用过多时间，用户会觉得页面卡顿。   
+
 可以通过把大的任务分片，优化或者减少页面卡顿问题，React Fiber便产生了。   
-通俗的理解为：把一个大型计算任务，分割成了一个一个微小的任务，微小任务执行完，检查是否有高优先级任务，以及该次渲染是否有空闲时间，   
+
+通俗的理解为：   
+把一个大型计算任务，分割成了一个一个微小的任务，微小任务执行完，检查是否有高优先级任务，以及该次渲染是否有空闲时间,
 如果有，则完成高优先级任务或者等待下一次渲染间隔去继续执行微小任务。   
-https://zhuanlan.zhihu.com/p/670914853
+
+---
+
+# React Fiber
+<img style="height: calc(100% - 20px)" src='ReactFiber.png'> 
 ---
 
 # Summary
 ### 
-React v16版本进行了重大改革，引入react hooks，react fiber。
-React=>Two Component Types=>Class Component=>State=>LifeCycle=>Function Component=>React Hooks   
-Virtual Dom => React Diff => React Fiber   
-https://component-party.dev
-![Local Image](/Learning.PNG)
+React v16版本进行了重大改革，重命名了一些生命周期函数，引入react hooks，react fiber。
+<div><v-click>React is library</v-click>
+<v-click>=>Two Component Types </v-click>
+<v-click>=>Class Component</v-click>
+<v-click>=>State(UI=F(D))</v-click>
+<v-click>=>LifeCycle</v-click>
+<v-click>=>Function Component</v-click>
+<v-click>=>React Hooks</v-click></div>     
+
+<div><v-click>Virtual Dom</v-click>
+<v-click>=>React Diff</v-click>
+<v-click>=>React Fiber</v-click></div>   
+<a target='_blank' href='https://component-party.dev' v-click>https://component-party.dev</a>
+<img style="height: calc(100% - 200px)" v-click src='/Learning.PNG'/>
+
 ---
 
 # Taro

@@ -1,3 +1,3 @@
 export function FunctionComponent(){
-    return <div>hi</div>;
+    return <div>this is function component</div>;
 }

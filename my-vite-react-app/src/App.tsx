@@ -12,7 +12,7 @@ function App() {
       <ul>
         {
           routes[0].children.map(x=>(
-            <li><Link to={x.path}>{x.name}</Link></li>
+            <li key={x.name}><Link to={x.path}>{x.name}</Link></li>
           ))
         }
       </ul>

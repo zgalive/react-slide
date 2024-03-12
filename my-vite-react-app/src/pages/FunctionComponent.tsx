@@ -1,3 +1,5 @@
+import { SayHi } from "../components/SayHiComponent";
+
 export function FunctionComponent(){
-    return <div>this is function component</div>;
+    return <SayHi userName='Tom'/>;
 }

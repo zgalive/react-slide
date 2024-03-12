@@ -22,6 +22,8 @@ export class LabelInputComponent extends Component {
         return <div>
             <span>{this.props.label}</span>&nbsp;
             <input value={this.state.value} onChange={e=>this.onInputChange(e.target.value)}/>
+
+            <span>input value: {this.state.value}</span>
         </div>
     }
 }

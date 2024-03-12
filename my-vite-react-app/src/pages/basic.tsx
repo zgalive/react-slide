@@ -7,6 +7,8 @@ export class Basic extends PureComponent{
     }
 
     render(): ReactNode {
-        return <LabelInputComponent label={this.state.label}/>;
+        return <>
+        <LabelInputComponent label={this.state.label}/>
+        </>
     }
 }

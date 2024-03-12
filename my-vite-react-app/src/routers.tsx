@@ -4,6 +4,8 @@ import { Basic } from "./pages/basic";
 import { FunctionComponent } from "./pages/FunctionComponent";
 import { LifeCycle } from "./pages/LifeCycle";
 import { ReactHooks } from "./pages/ReactHooks";
+import { RenderIf } from "./pages/RenderIf";
+import { RenderList } from "./pages/RenderList";
 
 export const routes = [
     {
@@ -19,21 +21,28 @@ export const routes = [
             {
                 path: 'LifeCycle',
                 name:'LifeCycle',
-        
                 element: <LifeCycle/>
             },
             {
                 path: 'FunctionComponent',
                 name:'FunctionComponent',
-        
                 element: <FunctionComponent/>,
+            },
+            {
+                path: 'RenderList',
+                name: 'RenderList',
+                element: <RenderList/>
+            },
+            {
+                path: 'RenderIf',
+                name: 'RenderIf',
+                element: <RenderIf/>
             },
             {
                 path: 'ReactHooks',
                 name:'ReactHooks',
-        
                 element: <ReactHooks/>
-            }
+            },
         ]
     },
     

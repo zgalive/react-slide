@@ -38,11 +38,11 @@ export const routes = [
                 name: 'RenderIf',
                 element: <RenderIf/>
             },
-            {
-                path: 'ReactHooks',
-                name:'ReactHooks',
-                element: <ReactHooks/>
-            },
+            // {
+            //     path: 'ReactHooks',
+            //     name:'ReactHooks',
+            //     element: <ReactHooks/>
+            // },
         ]
     },
     

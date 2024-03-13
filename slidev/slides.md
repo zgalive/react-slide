@@ -56,7 +56,7 @@ Vite
 npm create vite@latest xxx -- --template react-ts
 ```
 
-create-react-app (还能用，推荐初学者，但已经被官方抛弃)
+create-react-app (还能用，但已经被官方抛弃)
 ```js
 npx create-react-app my-app
 ```
